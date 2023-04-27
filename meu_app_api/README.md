@@ -1,8 +1,8 @@
 # Minha API
 
-Este pequeno projeto faz parte do material diático da Disciplina **Desenvolvimento Full Stack Básico** 
+Este pequeno projeto 'e uma api que faz cadastro de monitores incluindo email do monitor, habilidade e disponibilidade.
 
-O objetivo aqui é ilutsrar o conteúdo apresentado ao longo das três aulas da disciplina.
+O objetivo aqui é colocar em pratica o conteúdo apresentado ao longo das três aulas da disciplina.
 
 ---
 ## Como executar 
@@ -10,8 +10,6 @@ O objetivo aqui é ilutsrar o conteúdo apresentado ao longo das três aulas da 
 
 Será necessário ter todas as libs python listadas no `requirements.txt` instaladas.
 Após clonar o repositório, é necessário ir ao diretório raiz, pelo terminal, para poder executar os comandos descritos abaixo.
-
-> É fortemente indicado o uso de ambientes virtuais do tipo [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html).
 
 ```
 (env)$ pip install -r requirements.txt

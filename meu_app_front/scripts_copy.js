@@ -10,7 +10,7 @@ const getList = async () => {
   })
     .then((response) => response.json())
     .then((data) => {
-      data.monitores.forEach(monitor => insertList(monitor.nome, monitor.email, monitor.habilidade, monitor.dia, monitor.hora))
+      data.monitores.forEach(monitor => insertList(monitor.nome, monitor.email, monitor.habilidade, monitor.disponibilidade))
     })
     
     .catch((error) => {
@@ -133,8 +133,8 @@ const newItem = () => {
   Função para inserir items na lista apresentada
   --------------------------------------------------------------------------------------
 */
-const insertList = (nameMonitor, email, habilidade, dia, hora) => {
-  var item = [nameMonitor, email, habilidade, dia, hora]
+const insertList = (nameMonitor, email, habilidade, disponibilidade) => {
+  var item = [nameMonitor, email, habilidade, disponibilidade]
   var table = document.getElementById('myTable');
   var row = table.insertRow();
 
@@ -146,8 +146,7 @@ const insertList = (nameMonitor, email, habilidade, dia, hora) => {
   document.getElementById("newInput").value = "";
   document.getElementById("newEmail").value = "";
   document.getElementById("newSkill").value = "";
-  document.getElementById("newDia").value = "";
-  document.getElementById("newHora").value = "";
+  document.getElementById("newDisponibilidade").value = "";
   removeElement()
 }
 

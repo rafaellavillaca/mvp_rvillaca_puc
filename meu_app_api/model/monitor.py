@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 from datetime import datetime
 from typing import Union
 
-from  model import Base, Comentario
+from model import Base, Comentario
 
 
 class Monitor(Base):
@@ -13,8 +13,7 @@ class Monitor(Base):
     nome = Column(String(140), unique=True)
     email = Column(String(140))
     habilidade =  Column(String(600))
-    dia = Column(String(10))
-    hora = Column(String(5))
+    disponibilidade = Column(String(16))
     data_insercao = Column(DateTime, default=datetime.now())
     
     # Definição do relacionamento entre o monitor e o comentário.
@@ -24,7 +23,7 @@ class Monitor(Base):
     
     comentarios = relationship("Comentario")
 
-    def __init__(self, nome:str, email: str,  habilidade:str, dia:str, hora:str,
+    def __init__(self, nome:str, email: str,  habilidade:str, disponibilidade:str,
                  data_insercao:Union[DateTime, None] = None):
         """
         Cria um monitor
@@ -33,15 +32,14 @@ class Monitor(Base):
             nome: nome do voluntario.
             email: email do voluntario
             habilidade: habilidade que o voluntario se disponibiliza a ensinar
-            dia: data que o voluntario tem disponivel
-            hora: data que o voluntario tem disponivel
+            disponibilidade: data e hora que o voluntario tem disponivel
             data_insercao: data de quando o voluntario foi inserido à base
         """
         self.nome = nome
         self.email = email
         self.habilidade = habilidade
-        self.dia= dia
-        self.hora = hora
+        self.disponibilidade = disponibilidade
+
 
 
         # se não for informada, será o data exata da inserção no banco

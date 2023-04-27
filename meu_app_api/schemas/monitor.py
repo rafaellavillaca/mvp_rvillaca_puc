@@ -34,8 +34,8 @@ def apresenta_monitores(monitores: List[Monitor]):
             "nome": monitor.nome,
             "email": monitor.email,
             "habilidade": monitor.habilidade,
-            "dia": monitor.dia,
-            "hora": monitor.hora
+            "disponibilidade": monitor.disponibilidade,
+
         })
 
     return {"monitores": result}
@@ -48,8 +48,7 @@ class MonitorViewSchema(BaseModel):
     nome: str = "Maria Silva"
     email: str = "mariasilva@gmail.com"
     habilidade: str = "python"
-    dia: str = "MM/DD/YYYY"
-    hora: str = "HH:MM"
+    disponibilidade: str = "MM/DD/YYYY HH:MM"
     total_cometarios: int = 1
     comentarios:List[ComentarioSchema]
 
@@ -72,8 +71,7 @@ def apresenta_monitor(monitor: Monitor):
         "nome": monitor.nome,
         "email": monitor.email,
         "habilidade": monitor.habilidade,
-        "dia": monitor.dia,
-        "hora": monitor.hora,
+        "disponibilidade": monitor.disponibilidade,
         "total_cometarios": len(monitor.comentarios),
         "comentarios": [{"texto": c.texto} for c in monitor.comentarios]
     }

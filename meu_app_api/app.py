@@ -39,8 +39,7 @@ def add_monitor(form: MonitorSchema):
         nome=form.nome,
         email=form.email,
         habilidade=form.habilidade,
-        dia =  pd.to_datetime(datetime.strptime(str(form.disponibilidade)[:10], '%m/%d/%Y').date()).strftime('%m/%d/%Y'),
-        hora =  pd.to_datetime(datetime.strptime(str(form.disponibilidade[11:]), '%H:%M').date()).strftime('%H:%M'))
+        disponibilidade =  form.disponibilidade)
 
 
     logger.debug(f"Adicionando Monitor com email: '{monitor.email}'")

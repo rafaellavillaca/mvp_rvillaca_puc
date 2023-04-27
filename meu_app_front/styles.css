@@ -1,57 +1,18 @@
 #intro {
-    /* background-image: url("image volunteers.webp");
-    height: 80vh;
-    /* background-position: cover; */
+    background-image: url("volunteers.webp");
+    height: 65vh;
+    background-position: cover;
     background-repeat: no-repeat;
     background-size: 45%;
     background-position: bottom
   }
 
-  /* Height for devices larger than 576px */
-  @media (min-width: 992px) {
-    #intro {
-      margin-top: -17px;
-    }
-  }
-  .banner {
-    
-    background-image: url("image volunteers.webp");
-    width: 700px;
-    height: 350px;
-    background-size: 30%;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .navbar .nav-link {
-    color: #fff !important;
+  .navbar-brand {
+    font-size: 36px;
   }
 
   body, html {
-    height: 100%;
+    height: 70%;
 }
 
-/* The hero image */
-.hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("image volunteers.webp");
 
-  /* Set a specific height */
-  height: 50%;
-
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-/* Place text in the middle of the image */
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgb(19, 18, 18);
-}
