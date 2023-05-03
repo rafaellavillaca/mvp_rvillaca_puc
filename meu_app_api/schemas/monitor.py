@@ -1,7 +1,6 @@
 from pydantic import BaseModel
 from typing import List
 from model.monitor import Monitor
-from schemas import ComentarioSchema
 
 class MonitorSchema(BaseModel):
     """ Define como um novo monitor a ser inserido deve ser representado
@@ -42,15 +41,14 @@ def apresenta_monitores(monitores: List[Monitor]):
 
 
 class MonitorViewSchema(BaseModel):
-    """ Define como um monitor será retornado: monitor + comentários.
+    """ Define como um monitor será retornado: monitor.
     """
     id: int = 1
-    nome: str = "Maria Silva"
-    email: str = "mariasilva@gmail.com"
-    habilidade: str = "python"
+    nome: str = "Nome do Monitor"
+    email: str = "email do monitor"
+    habilidade: str = "habilidade"
     disponibilidade: str = "MM/DD/YYYY HH:MM"
-    total_cometarios: int = 1
-    comentarios:List[ComentarioSchema]
+
 
 
 class MonitorDelSchema(BaseModel):
@@ -71,7 +69,5 @@ def apresenta_monitor(monitor: Monitor):
         "nome": monitor.nome,
         "email": monitor.email,
         "habilidade": monitor.habilidade,
-        "disponibilidade": monitor.disponibilidade,
-        "total_cometarios": len(monitor.comentarios),
-        "comentarios": [{"texto": c.texto} for c in monitor.comentarios]
+        "disponibilidade": monitor.disponibilidade
     }

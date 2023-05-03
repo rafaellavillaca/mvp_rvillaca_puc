@@ -5,7 +5,6 @@ import os
 
 # importando os elementos definidos no modelo
 from model.base import Base
-from model.comentario import Comentario
 from model.monitor import Monitor
 
 db_path = "database/"
